@@ -43,4 +43,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // Buy Now widgets: opening one closes any others, and clicking
+  // outside an open widget closes it.
+  var buyWidgets = document.querySelectorAll('details.buy-widget');
+  buyWidgets.forEach(function (widget) {
+    widget.addEventListener('toggle', function () {
+      if (widget.open) {
+        buyWidgets.forEach(function (other) {
+          if (other !== widget) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    buyWidgets.forEach(function (widget) {
+      if (widget.open && !widget.contains(e.target)) {
+        widget.removeAttribute('open');
+      }
+    });
+  });
 });
