@@ -114,7 +114,7 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   min-height: 30vh;
   color: #fff;
   overflow: hidden;
@@ -133,9 +133,7 @@ img { max-width: 100%; display: block; }
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 70% 90% at center, rgba(10,18,17,0.46) 0%, rgba(10,18,17,0.22) 55%, rgba(10,18,17,0.08) 100%),
-    linear-gradient(180deg, rgba(20,32,30,0.25) 0%, rgba(20,32,30,0.1) 45%, rgba(20,32,30,0.35) 100%);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .hero-content {
@@ -143,8 +141,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 5rem 1.5rem;
-  text-align: center;
+  padding: 0 1.5rem 3rem;
+  text-align: left;
   width: 100%;
 }
 
