@@ -163,6 +163,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Sections ---------- */
 section { padding: 4.5rem 0; }
 section.alt { background: var(--color-bg-alt); }
+section.featured-section { padding: 3.6rem 0; }
 
 .section-intro {
   max-width: 720px;
@@ -253,8 +254,8 @@ section.alt { background: var(--color-bg-alt); }
 /* ---------- Featured book ---------- */
 .featured {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 3rem;
+  grid-template-columns: 230px 1fr;
+  gap: 2.4rem;
   align-items: center;
 }
 
@@ -353,6 +354,37 @@ section.alt { background: var(--color-bg-alt); }
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-top: 3rem;
+}
+
+.pair-books.single-book {
+  grid-template-columns: minmax(0, 640px);
+  justify-content: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cover-placeholder {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  background: var(--color-bg-alt);
+  border: 2px dashed var(--color-line);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  padding: 1rem;
+}
+
+.btn-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .pair-book {
@@ -644,7 +676,7 @@ section.alt { background: var(--color-bg-alt); }
     margin: 0 auto 2rem;
   }
   .featured img {
-    max-width: 260px;
+    max-width: 190px;
     margin: 0 auto 2rem;
   }
 }
