@@ -271,6 +271,10 @@ section.alt { background: var(--color-bg-alt); }
   align-items: start;
 }
 
+.about-layout--compact {
+  grid-template-columns: 260px 1fr;
+}
+
 .about-layout img {
   border-radius: 6px;
   box-shadow: 0 20px 40px rgba(31,58,61,0.2);
@@ -636,6 +640,10 @@ section.alt { background: var(--color-bg-alt); }
   .about-layout img,
   .book-detail img {
     position: static;
+    max-width: 260px;
+    margin: 0 auto 2rem;
+  }
+  .featured img {
     max-width: 260px;
     margin: 0 auto 2rem;
   }
