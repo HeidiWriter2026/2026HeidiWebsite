@@ -134,8 +134,8 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 90% at center, rgba(10,18,17,0.6) 0%, rgba(10,18,17,0.32) 55%, rgba(10,18,17,0.12) 100%),
-    linear-gradient(180deg, rgba(20,32,30,0.35) 0%, rgba(20,32,30,0.18) 45%, rgba(20,32,30,0.45) 100%);
+    radial-gradient(ellipse 70% 90% at center, rgba(10,18,17,0.46) 0%, rgba(10,18,17,0.22) 55%, rgba(10,18,17,0.08) 100%),
+    linear-gradient(180deg, rgba(20,32,30,0.25) 0%, rgba(20,32,30,0.1) 45%, rgba(20,32,30,0.35) 100%);
 }
 
 .hero-content {
@@ -583,8 +583,8 @@ section.alt { background: var(--color-bg-alt); }
 .site-footer {
   background: var(--color-teal);
   color: #dfe8e6;
-  padding: 3rem 0 2rem;
-  margin-top: 2rem;
+  padding: 2.4rem 0 1.6rem;
+  margin-top: 1.6rem;
 }
 
 .footer-wrap {
@@ -619,8 +619,8 @@ section.alt { background: var(--color-bg-alt); }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
   border-top: 1px solid rgba(255,255,255,0.15);
   font-size: 0.85rem;
   color: #b9c9c6;
