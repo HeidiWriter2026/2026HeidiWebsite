@@ -34,7 +34,7 @@
       <p>Whether it&rsquo;s a note about one of the books, a question, or just to say hello &mdash; drop a line below.</p>
     </div>
 
-    <form class="contact-form" id="contact-form">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/myegvovn" method="POST">
       <div class="form-field">
         <label for="cf-name">Name</label>
         <input type="text" id="cf-name" name="name" required>
@@ -48,7 +48,7 @@
         <textarea id="cf-message" name="message" required></textarea>
       </div>
       <button type="submit" class="btn">Send Message</button>
-      <p class="form-note" id="contact-form-note"></p>
+      <p class="form-note" id="contact-form-note" role="status"></p>
     </form>
   </div>
 </section>
