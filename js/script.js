@@ -25,22 +25,33 @@ document.addEventListener('DOMContentLoaded', function () {
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name = form.querySelector('#cf-name').value.trim();
-      var replyTo = form.querySelector('#cf-email').value.trim();
-      var message = form.querySelector('#cf-message').value.trim();
-
-      var subject = 'Message from ' + (name || 'your website') + ' via heidihostetter.com';
-      var body = message + '\n\n---\nFrom: ' + name + ' (' + replyTo + ')';
-      var mailto = 'mailto:' + authorEmail +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailto;
-
       var note = document.querySelector('#contact-form-note');
-      if (note) {
-        note.textContent = 'Opening your email app to send this to Heidi… if nothing happens, your device may not have one configured.';
-      }
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (note) note.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.reset();
+          if (note) note.textContent = 'Thanks for reaching out — your message is on its way to Heidi.';
+        } else {
+          return response.json().then(function (data) {
+            var detail = data && data.errors && data.errors.length
+              ? data.errors.map(function (err) { return err.message; }).join(', ')
+              : null;
+            if (note) note.textContent = detail || 'Something went wrong sending your message. Please try again or email Heidi directly.';
+          });
+        }
+      }).catch(function () {
+        if (note) note.textContent = 'Something went wrong sending your message. Please try again or email Heidi directly.';
+      }).finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
     });
   }
 
